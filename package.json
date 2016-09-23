@@ -2,13 +2,22 @@
   "name": "d3-source-sink",
   "version": "0.0.1",
   "description": "D3 plugin that generates a source to sink graph for following flow.  Similar to a Sankey Visualization.",
-  "main": "index.js",
+  "main": "build/d3-source-sink.js",
+  "jsnext:main": "index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -n d3 -o build/d3-source-sink.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/d3-source-sink.js -c -m -o build/d3-source-sink.min.js",
+    "postpublish": "zip -j build/d3-source-sink.zip -- LICENSE README.md build/d3-source-sink.js build/d3-source-sink.min.js"
   },
   "keywords": [
     "d3",
-    "source-sink"
+    "d3-module"
   ],
-  "author": "Matt Gibbs <matt@mtgibbs.xyz> (http://mtgibbs.xyz)"
+  "author": "Matt Gibbs <matt@mtgibbs.xyz> (http://mtgibbs.xyz)",
+  "devDependencies": {
+    "rollup": "0.27",
+    "tape": "4",
+    "uglify-js": "2"
+  }
 }
