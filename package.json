@@ -1,0 +1,14 @@
+{
+  "name": "d3-source-sink",
+  "version": "0.0.1",
+  "description": "D3 plugin that generates a source to sink graph for following flow.  Similar to a Sankey Visualization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "d3",
+    "source-sink"
+  ],
+  "author": "Matt Gibbs <matt@mtgibbs.xyz> (http://mtgibbs.xyz)"
+}
