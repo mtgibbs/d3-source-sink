@@ -37,7 +37,7 @@ import * as d3 from 'd3';
         if (typeof nodepadding === 'undefined')
             return _nodePadding;
         _nodePadding = nodepadding;
-        return this;
+        return _sourceSink;
     };
 
     _sourceSink.links = (links) => {
