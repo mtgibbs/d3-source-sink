@@ -48,7 +48,7 @@
 
     _sourceSink.layout = () => {
         SourceSinkHelper.initializeLinks(_nodes, _links);
-        SourceSinkHelper.computeNodeDepth(_nodes, _nodeHeight);
+        SourceSinkHelper.computeNodeDepth(_nodes, _nodeHeight, _nodePadding);
         return _sourceSink;
     };
 
@@ -97,7 +97,7 @@ class SourceSinkHelper {
         });
     }
 
-    public static computeNodeDepth(nodes: Array<INode>, nodeHeight: number) {
+    public static computeNodeDepth(nodes: Array<INode>, nodeHeight: number, nodePadding:number) {
         let remainingNodes = nodes;
         let y = 0;
 
@@ -125,7 +125,7 @@ class SourceSinkHelper {
         });
 
         for (let node of nodes) {
-            node.y *= nodeHeight / (y + 1);
+            node.y *= nodeHeight + nodePadding;
         }
     }
 
