@@ -2,7 +2,6 @@ import * as d3 from 'd3';
 
 (<any>d3).sourceSink = (): SourceSink => {
 
-
     let _nodeHeight: number = 24;
     let _nodeWidth: number = 24;
     let _nodePadding: number = 10;
@@ -19,7 +18,6 @@ import * as d3 from 'd3';
     // }
 
     _sourceSink.nodeHeight = (height) => {
-        console.log('height');
         if (typeof height === 'undefined')
             return _nodeHeight;
         _nodeHeight = height;
@@ -79,7 +77,6 @@ import * as d3 from 'd3';
         return _link;
     };
 
-    console.log(_sourceSink);
     return _sourceSink;
 };
 
