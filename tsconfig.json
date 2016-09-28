@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "outDir": "build",
+        "declaration": true,
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "d3"
+        ]
+    },
+    "files": [
+        "./src/d3-source-sink.ts"
+    ]
+}
