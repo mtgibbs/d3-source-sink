@@ -175,7 +175,7 @@ class SourceSinkHelper {
             .entries(nodes)
             .map((d: any) => { return d.values; });
 
-        const widestRowCount = Math.max.apply(Math, nodesByDepth.map((row) => { return row.length }));
+        const widestRowCount = Math.max.apply(Math, nodesByDepth.map((row) => { return row.length; }));
         const maxX = widestRowCount * (nodeWidth + nodePadding);
 
         nodesByDepth.forEach((nodes: Array<INode>) => {
