@@ -50,7 +50,6 @@
         SourceSinkHelper.initializeLinks(_nodes, _links);
         SourceSinkHelper.computeNodeDepth(_nodes, _nodeHeight, _nodePadding);
         SourceSinkHelper.computeNodeBreadths(_nodes, _links, _nodeWidth, _nodePadding);
-        SourceSinkHelper.computeLinkBreadths(_nodes);
         return _sourceSink;
     };
 
@@ -187,36 +186,9 @@ class SourceSinkHelper {
             });
         });
 
-        links.forEach(function (link) {
+        links.forEach((link) => {
             link.dx = (nodeWidth + nodePadding);
         });
-    }
-
-    public static computeLinkBreadths(nodes: Array<INode>) {
-        nodes.forEach((node) => {
-            node.sourceLinks.sort(SourceSinkHelper.ascendingSourceBreadth);
-            node.sinkLinks.sort(SourceSinkHelper.ascendingSinkBreadth);
-        });
-
-        nodes.forEach((node) => {
-
-            let sx = 0;
-            let tx = 0;
-            node.sourceLinks.forEach((link) => {
-                sx += link.dx;
-            });
-            node.sinkLinks.forEach((link) => {
-                tx += link.dx;
-            });
-        });
-    }
-
-    private static ascendingSourceBreadth(a: ILink, b: ILink) {
-        return (<INode>a.source).x - (<INode>b.source).x;
-    }
-
-    private static ascendingSinkBreadth(a: ILink, b: ILink) {
-        return (<INode>a.sink).x - (<INode>b.sink).x;
     }
 }
 
