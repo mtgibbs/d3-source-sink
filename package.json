@@ -3,7 +3,6 @@
   "version": "3.0.1",
   "description": "D3 plugin that generates a source to sink graph for following flow.  Similar to a Sankey Visualization.",
   "main": "build/d3-source-sink.js",
-  "jsnext:main": "index",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
