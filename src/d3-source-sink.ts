@@ -12,6 +12,12 @@ import * as d3 from 'd3';
 
     const _sourceSink: SourceSink = {};
 
+    // _sourceSink.nodeHeight = function (height) {
+    //     if (!arguments.length) return height;
+    //     _nodeHeight = +height;
+    //     return _sourceSink;
+    // }
+
     _sourceSink.nodeHeight = (height) => {
         console.log('height');
         if (typeof height === 'undefined')
@@ -55,19 +61,19 @@ import * as d3 from 'd3';
     };
 
     _sourceSink.link = () => {
+
         let _curvature = .5;
-        const _link: SourceSinkLink = {
 
-            curvature: (curvature) => {
-                if (typeof curvature === 'undefined')
-                    return _curvature;
-                _curvature = curvature;
-                return _link;
-            },
+        const _link = (link: ILink): string => {
+            return SourceSinkHelper.computeLinkPath(link, _nodeHeight, _curvature);
+        };
 
-            link: (link) => {
-                return SourceSinkHelper.computeLinkPath(link, _nodeHeight, _curvature);
-            }
+        // HACK: Find a better way to make this function in a more typescripty way
+        (<any>_link).curvature = (curvature: number): any => {
+            if (typeof curvature === 'undefined')
+                return _curvature;
+            _curvature = curvature;
+            return _link;
         };
 
         return _link;
@@ -224,7 +230,7 @@ interface SourceSink {
     nodes?: (nodes?: Array<INode>) => SourceSink | Array<INode>;
     links?: (links?: Array<ILink>) => SourceSink | Array<ILink>;
     layout?: () => SourceSink;
-    link?: () => SourceSinkLink;
+    link?: Function;
 }
 
 interface SourceSinkLink {
