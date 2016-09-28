@@ -208,7 +208,6 @@ interface SourceSinkLink {
 }
 
 interface INode {
-
     x: number;
     dx: number;
     y: number;
@@ -216,11 +215,13 @@ interface INode {
 
     sourceLinks: Array<ILink>;
     sinkLinks: Array<ILink>;
+    rootIds: Array<number>;
 };
 
 interface ILink {
     source: INode | number;
     sink: INode | number;
-
     dx: number;
+    dy: number;
+    rootIds: Array<number>;
 }
