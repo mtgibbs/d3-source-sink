@@ -99,7 +99,7 @@ class SourceSinkHelper {
         });
     }
 
-    public static computeNodeDepth(nodes: Array<INode>, nodeHeight: number, nodePadding:number) {
+    public static computeNodeDepth(nodes: Array<INode>, nodeHeight: number, nodePadding: number) {
         let remainingNodes = nodes;
         let y = 0;
 
@@ -176,9 +176,13 @@ class SourceSinkHelper {
             .entries(nodes)
             .map((d: any) => { return d.values; });
 
+        const widestRowCount = Math.max.apply(Math, nodesByDepth.map((row) => { return row.length }));
+        const maxX = widestRowCount * (nodeWidth + nodePadding);
+
         nodesByDepth.forEach((nodes: Array<INode>) => {
+            const rowOffset = (maxX - (nodes.length * (nodeWidth + nodePadding))) / 2;
             nodes.forEach((node, i) => {
-                node.x = i * (nodeWidth + nodePadding);
+                node.x = i * (nodeWidth + nodePadding) + rowOffset;
                 node.dx = nodeWidth;
             });
         });
