@@ -1,4 +1,4 @@
-import * as d3 from 'd3';
+/// <reference types="d3" />
 
 (<any>d3).sourceSink = (): SourceSink => {
 
