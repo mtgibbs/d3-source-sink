@@ -11,12 +11,6 @@ import * as d3 from 'd3';
 
     const _sourceSink: SourceSink = {};
 
-    // _sourceSink.nodeHeight = function (height) {
-    //     if (!arguments.length) return height;
-    //     _nodeHeight = +height;
-    //     return _sourceSink;
-    // }
-
     _sourceSink.nodeHeight = (height) => {
         if (typeof height === 'undefined')
             return _nodeHeight;
