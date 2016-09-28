@@ -49,6 +49,8 @@
     _sourceSink.layout = () => {
         SourceSinkHelper.initializeLinks(_nodes, _links);
         SourceSinkHelper.computeNodeDepth(_nodes, _nodeHeight, _nodePadding);
+        SourceSinkHelper.computeNodeBreadths(_nodes, _links, _nodeWidth, _nodePadding);
+        SourceSinkHelper.computeLinkBreadths(_nodes);
         return _sourceSink;
     };
 
