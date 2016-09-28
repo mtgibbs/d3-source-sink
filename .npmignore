@@ -1,0 +1,17 @@
+src
+node_modules
+test
+
+.*
+
+*.ts
+*.js.map
+
+tsconfig.json
+tslint.json
+
+
+!build/**/*.*
+build/**/*.js.map
+
+npm-debug.log
