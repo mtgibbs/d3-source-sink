@@ -121,7 +121,7 @@ class SourceSinkHelper {
         }
 
         nodes.filter(node => {
-            return !node.sourceLinks.length;
+            return !node.sinkLinks.length;
         }).forEach(node => {
             node.y = y - 1;
         });
