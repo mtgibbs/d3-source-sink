@@ -108,7 +108,7 @@ class SourceSinkHelper {
                 node.y = y;
                 node.dy = nodeHeight;
 
-                for (let link of node.sourceLinks) {
+                for (let link of node.sinkLinks) {
                     if (nextNodes.indexOf(<INode>link.sink) < 0)
                         nextNodes.push(<INode>link.sink);
                 }
