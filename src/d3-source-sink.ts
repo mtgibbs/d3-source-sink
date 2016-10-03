@@ -86,12 +86,17 @@ class SourceSinkHelper {
         links.forEach(link => {
             let source = link.source;
             let sink = link.sink;
+            link.rootIds = [];
 
             if (typeof source === 'number')
                 source = link.source = nodes[source];
 
             if (typeof sink === 'number')
                 sink = link.sink = nodes[sink];
+
+            const rootIds = (<INode>source).rootIds;
+            if (rootIds && rootIds.length)
+                link.rootIds.concat(rootIds);
 
             (<INode>source).sinkLinks.push(link);
             (<INode>sink).sourceLinks.push(link);
@@ -223,5 +228,5 @@ interface ILink {
     sink: INode | number;
     dx: number;
     dy: number;
-    rootIds: Array<number>;
+    rootIds?: Array<number>;
 }
