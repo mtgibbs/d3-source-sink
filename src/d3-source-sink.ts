@@ -96,7 +96,7 @@ class SourceSinkHelper {
 
             const rootIds = (<INode>source).rootIds;
             if (rootIds && rootIds.length)
-                link.rootIds.concat(rootIds);
+                link.rootIds = link.rootIds.concat(rootIds);
 
             (<INode>source).sinkLinks.push(link);
             (<INode>sink).sourceLinks.push(link);
