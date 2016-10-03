@@ -148,16 +148,15 @@ class SourceSinkHelper {
 
             const index = sourceNode.sinkLinks.indexOf(link);
 
+            let midpoint = 0;
             if (sourceNode.sinkLinks.length % 2 === 0) {
-                const midpoint = sourceNode.sinkLinks.length / 2 - 1;
-                const distanceCalc = index - midpoint;
-                centerOffset = centerOffset + distanceCalc;
-
+                midpoint = sourceNode.sinkLinks.length / 2 - 1;
             } else {
-                const midpoint = (sourceNode.sinkLinks.length - 1) / 2;
-                const distanceCalc = index - midpoint;
-                centerOffset = centerOffset + distanceCalc;
+                midpoint = (sourceNode.sinkLinks.length - 1) / 2;
             }
+
+            const distanceCalc = index - midpoint;
+            centerOffset = centerOffset + distanceCalc;
 
             x0 = sourceNode.x + centerOffset;
         }
