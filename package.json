@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "start": "tsc && concurrently \"npm run tsc:w\"",
-    "clean": "rimraf dist",
+    "clean": "rimraf build",
     "lint": "tslint -c ./tslint.json ./src/**/*.ts --exclude \"./node_modules/**/*\"",
     "build": "tsc && uglifyjs --compress --mangle --output ./build/d3-source-sink.min.js -- ./build/d3-source-sink.js"
   },
