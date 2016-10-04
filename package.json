@@ -3,6 +3,7 @@
   "version": "3.0.1",
   "description": "D3 plugin that generates a source to sink graph for following flow.",
   "main": "build/d3-source-sink.js",
+  "types": "build/d3-source-sink.d.ts",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
