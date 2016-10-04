@@ -1,0 +1,24 @@
+{
+  "name": "d3-source-sink",
+  "description": "D3 plugin that generates a source to sink graph for following flow.",
+  "main": "build/d3-source-sink.js",
+  "authors": [
+    "Matt Gibbs <matt@mtgibbs.xyz> (http://mtgibbs.xyz)"
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "d3",
+    "d3-module"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "*.json"
+  ]
+}

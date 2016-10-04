@@ -7,9 +7,8 @@ test
 *.ts
 *.js.map
 
-tsconfig.json
-tslint.json
-
+*.json
+!package.json
 
 !build/**/*.*
 build/**/*.js.map
