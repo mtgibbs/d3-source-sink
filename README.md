@@ -2,6 +2,8 @@
 
 D3 (v3) plugin for generating a source-sink graph.
 
+[![Build Status](https://travis-ci.org/mtgibbs/d3-source-sink.svg?branch=master)](https://travis-ci.org/mtgibbs/d3-source-sink)
+
 ## Usage
 
 ```javascript
